@@ -25,7 +25,7 @@ pipeline {
                     withCredentials([usernamePassword(credentialsId: 'github-creds', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_PASS')]) {
                         sh '''
                             git remote add repo2 https://$GIT_USER:$GIT_PASS@github.com/srpsubbaraman/repo2.git
-                            git push repo2 main
+                            git push -f repo2 main
                         '''
                     }
                 }
